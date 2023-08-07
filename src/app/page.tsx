@@ -99,16 +99,16 @@ export default function Home() {
     <div className='container max-w-2xl'>
      
       <h1 className='text-center text-4xl my-4'>Lista de Tarefas</h1>
-      <div className='max-w-2xl mx-auto flex rounded-md bg-gray-900 border border-gray-400 p-4 my-4'>
+      <div className= 'max-w-2xl mx-auto flex rounded-md bg-gray-900 border border-gray-400 p-4 my-4'>
         <input 
           placeholder='Digite um item'
           type='text' 
-          className='outline-none flex-1 rounded-md border border-white p-3 bg-transparent text-white' 
+          className='outline-none flex-1 rounded-md border border-white p-3 bg-transparent text-white text-xs md:text-base' 
           value={addField}
           onChange={e=>setAddField(e.target.value)}
         />
         <button 
-          className='p-4'
+          className='p-4 text-xs md:text-base'
           onClick={handleAddButton}
         >
           ADICIONAR
@@ -122,7 +122,7 @@ export default function Home() {
           >
             <input 
               type='checkbox'
-              className='w-6 h-6 mr-4'
+              className='w-4 h-4 mr-4 md:w-6 h-6'
               checked={item.done}
               onClick={() => handleDoneCheckBox(item.id)}
               onChange={()=>{}}
@@ -133,15 +133,15 @@ export default function Home() {
                 placeholder='Editando...'
                 value={newText}
                 onChange={e => setNewText(e.target.value)}
-                className='flex-1 text-lg bg-transparent border rounded-md px-3 text-white' 
+                className='flex-1 bg-transparent border rounded-md px-3 text-white text-xs md:text-lg' 
                 />
             ):(
-              <p className='flex-1 text-lg'>{item.text}</p>
+              <p className='flex-1 text-xs md:text-lg'>{item.text}</p>
             )}
             
             <button onClick={showEdit ? ()=>handleEdit(item.id) as any : ()=>handleShowEdit(item.text, item.id) as any} className='mx-4 hover:text-gray-500'>
               {showEdit && showId == item.id ? (
-                <p>Salvar</p>
+                <p className='text-xs md:text-lg'>Salvar</p>
               ):(
                 <AiFillEdit size={25} />
               )}
