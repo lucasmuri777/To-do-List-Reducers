@@ -27,7 +27,8 @@ export default function Home() {
         dispatch({
           type: 'add',
           payload:{
-            text: item.text
+            text: item.text,
+            done: item.done
           }
         })
       })
@@ -115,14 +116,14 @@ export default function Home() {
         </button>
       </div>
       <ul className='max-w-2xl mx-auto'>
-        {list.map(item=>(
+        {list.map(item =>(
           <li
             className='flex items-center p-3 my-3 border-b border-gray-700' 
             key={item.id}
           >
             <input 
               type='checkbox'
-              className='w-4 h-4 mr-4 md:w-6 h-6'
+              className='w-4 h-4 mr-4 md:w-6 md:h-6'
               checked={item.done}
               onClick={() => handleDoneCheckBox(item.id)}
               onChange={()=>{}}

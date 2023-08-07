@@ -5,6 +5,7 @@ type AddAction = {
     type: 'add';
     payload: {
         text: string
+        done?: boolean
     };
 }
 type EditTextAction = {
@@ -36,7 +37,7 @@ export const listReducer = (list: Item[], action: ListActions) =>{
         return [...list, {
             id: list.length, 
             text: action.payload.text, 
-            done: false}
+            done: action.payload.done == true ? true : false }
           ]
           
     case 'editText':
