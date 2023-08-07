@@ -96,7 +96,7 @@ export default function Home() {
   
 
   return (
-    <div className='container mx-auto'>
+    <div className='container max-w-2xl'>
      
       <h1 className='text-center text-4xl my-4'>Lista de Tarefas</h1>
       <div className='max-w-2xl mx-auto flex rounded-md bg-gray-900 border border-gray-400 p-4 my-4'>
